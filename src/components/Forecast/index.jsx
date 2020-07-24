@@ -27,7 +27,7 @@ export default function Forecast() {
         title={location.cityName}
         titleTypographyProps={{variant:'h4' }}
         subheaderTypographyProps={{variant: 'h5', color: 'black'}}
-        subheader="TODAY"
+        subheader={`${currentWeather.Temperature.Metric.Value}\xB0C`}
         avatar={
           <CardActions disableSpacing>
             {favorites.some(({ id }) => id === location.key) ? (
