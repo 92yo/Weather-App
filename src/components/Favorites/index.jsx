@@ -23,6 +23,8 @@ function Favorites() {
 
   useEffect(() => {
     fetchFavorites();
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const fetchFavorites = async () => {
@@ -56,12 +58,11 @@ function Favorites() {
               ? `${favs[favorite.id].Temperature.Metric.Value}\xB0C`
               : converter(favs[favorite.id].Temperature.Metric.Value)}
           </div>
-          <IconButton aria-label="remove from favorites">
+          <IconButton aria-label="remove from favorites" onClick={() =>
+                dispatch(removeFavorite(favorite.id))
+              }>
             <FavoriteIcon
             className={classes.favoriteIcon}
-              onClick={() =>
-                dispatch(removeFavorite(favorite.id))
-              }
             />
           </IconButton>
         </div>

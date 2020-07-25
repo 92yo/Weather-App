@@ -24,29 +24,30 @@ export default function Forecast() {
   return (
     <div className={classes.root}>
       <CardHeader
+        style={{ marginTop: "5%"}}
         title={location.cityName}
-        titleTypographyProps={{variant:'h4' }}
-        subheaderTypographyProps={{variant: 'h5', color: 'black'}}
-        subheader={`${currentWeather.Temperature.Metric.Value}\xB0C`}
+        titleTypographyProps={{ variant: "h4" }}
+        subheaderTypographyProps={{ variant: "h5", color: 'inherit'}}
+        subheader= {`${currentWeather.Temperature.Metric.Value}\xB0C`} 
         avatar={
           <CardActions disableSpacing>
             {favorites.some(({ id }) => id === location.key) ? (
-              <IconButton aria-label="remove from favorites">
-                <FavoriteIcon
-                className={classes.favoriteIcon}
-                  onClick={() =>
-                    dispatch(removeFavorite(location.key, location.cityName))
-                  }
-                />
+              <IconButton
+                onClick={() =>
+                  dispatch(removeFavorite(location.key, location.cityName))
+                }
+                aria-label="remove from favorites"
+              >
+                <FavoriteIcon className={classes.favoriteIcon} />
               </IconButton>
             ) : (
-              <IconButton aria-label="add to favorites">
-                <FavoriteBorderIcon
-                className={classes.favoriteIcon}
-                  onClick={() =>
-                    dispatch(addFavorite(location.key, location.cityName))
-                  }
-                />
+              <IconButton
+                onClick={() =>
+                  dispatch(addFavorite(location.key, location.cityName))
+                }
+                aria-label="add to favorites"
+              >
+                <FavoriteBorderIcon className={classes.favoriteIcon} />
               </IconButton>
             )}
           </CardActions>

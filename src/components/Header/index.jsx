@@ -15,6 +15,7 @@ import {
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import MoreIcon from "@material-ui/icons/MoreVert";
 import BrightnessIcon from '@material-ui/icons/BrightnessMedium';
+import HomeIcon from '@material-ui/icons/Home';
 
 import { useStyles } from "./style";
 
@@ -69,12 +70,13 @@ export default function Header() {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <IconButton aria-label="dark-toggle" color="inherit">
-          <BrightnessIcon onClick={(e) => dispatch(toggleDarkMode())} />
+        <IconButton 
+        onClick={() => dispatch(toggleDarkMode())}aria-label="dark-toggle" color="inherit">
+          <BrightnessIcon style={{color:"#d50000"}} fontSize="inherit"  />
         </IconButton>
         <IconButton
           aria-label="convert-units"
-          color="inherit"
+          style={{color:"#d50000"}}
           onClick={(e) => dispatch(convertUnits())}
         >
           <div className={classes.unitIcon}>
@@ -84,36 +86,42 @@ export default function Header() {
       </MenuItem>
       <MenuItem>
         <IconButton aria-label="favorites" color="inherit">
-          <Badge badgeContent={favorites.length} color="secondary">
+          <Badge badgeContent={favorites.length} color="error">
             <Link to="/favorites">
-              <FavoriteIcon />
+              <FavoriteIcon style={{color:"#d50000"}} fontSize="inherit" />
             </Link>
           </Badge>
         </IconButton>
+        <IconButton
+              aria-label="back-button"
+              color="inherit"
+            >
+              <Link to="/">
+              <HomeIcon style={{color:"#d50000"}} fontSize="inherit"/>
+              </Link>
+            </IconButton>
       </MenuItem>
     </Menu>
   );
-
   return (
     <div className={classes.grow}>
       <AppBar className={classes.appBar}>
         <Toolbar>
           <Typography className={classes.title} variant="h5" noWrap>
-            <Link to="/">Weather App</Link>
+            <Link to="/" style={{color:"#d50000"}}>Weather App</Link>
           </Typography>
           <SearchInput />
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
             <IconButton
               aria-label="dark-toggle"
-              color="inherit"
               onClick={(e) => dispatch(toggleDarkMode())}
             >
-              <BrightnessIcon />
+              <BrightnessIcon style={{color:"#d50000"}}fontSize="inherit"/>
             </IconButton>
             <IconButton
               aria-label="convert-units"
-              color="inherit"
+              style={{color:"#d50000"}}
               onClick={(e) => dispatch(convertUnits())}
             >
               <div className={classes.unitIcon}>
@@ -122,8 +130,10 @@ export default function Header() {
             </IconButton>
             <IconButton aria-label="favorites" color="inherit">
               <Link to="/favorites">
-                <Badge badgeContent={favorites.length} color="secondary">
-                  <FavoriteIcon />
+                <Badge badgeContent={favorites.length} color="error">
+                  <FavoriteIcon
+                  style={{color:"#d50000"}}
+                   fontSize="inherit"/>
                 </Badge>
               </Link>
             </IconButton>
@@ -136,7 +146,7 @@ export default function Header() {
               onClick={handleMobileMenuOpen}
               color="inherit"
             >
-              <MoreIcon />
+              <MoreIcon style={{color:"#d50000"}}/>
             </IconButton>
           </div>
         </Toolbar>

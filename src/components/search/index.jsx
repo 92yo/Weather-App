@@ -90,9 +90,9 @@ export default function Search() {
 
   return (
     <div className={classes.search}>
-      <div className={classes.searchIcon}>
-        <SearchIcon onClick={handleSubmit} />
-      </div>
+      <IconButton onClick={handleSubmit} className={classes.searchIcon}>
+        <SearchIcon />
+      </IconButton>
       <InputBase
         onChange={handleChange}
         value={autoComplete.text}

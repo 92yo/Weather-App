@@ -5,12 +5,11 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   appBar: {
-    margin: '10px',
-    background: 'linear-gradient(45deg, #b3e5fc 30%, #039be5 90%)',
-    boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+    margin: '5px',
+    background: 'transparent',
+    boxShadow: 'none',
     position: "static",
-    color: "red",
-    opacity: '0.8'
+    color: "red"
   },
   title: {
     display: 'none',

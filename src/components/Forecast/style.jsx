@@ -19,19 +19,20 @@ const useStyles = makeStyles((theme) => ({
     transform: "rotate(180deg)",
   },
   weatherList: {
+    marginTop: '10%',
     display: "flex",
     justifyContent: "space-between",
-    padding: "2rem",
+    padding: "1rem",
   },
   weatherItem:{
     textAlign: 'center',
     padding: '1rem',
     borderRadius: '1.6rem',
     flexBasis: '15%',
-    fontWeight: 'bold',
+    fontWeight: 'bolder',
   },
   weatherDay:{
-    fontWeight: 'bold',
+    fontWeight: 'bolder',
   }
 
 }));

@@ -36,9 +36,11 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    weight: "bolder",
   },
   inputRoot: {
-    color: "inherit",
+    color: "black",
+    fontSize: "large",
   },
   inputInput: {
     padding: theme.spacing(1, 1, 1, 0),
@@ -63,35 +65,35 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   searchResults: {
-    position: 'absolute',
+    position: "absolute",
     right: 0,
-    width: 'auto',
+    width: "auto",
     left: 0,
-    top: '1.8rem',
-    backgroundColor: '#fff',
-    padding: '1.6rem',
-    maxHeight: '20vh',
-    overflowY: 'auto',
+    top: "1.8rem",
+    backgroundColor: "#fff",
+    padding: "1.6rem",
+    maxHeight: "20vh",
+    overflowY: "auto",
     zIndex: 5,
-    opacity: '0.7',
-    color: 'black',
+    opacity: "0.7",
+    color: "black",
   },
   ResultList: {
-    padding: '0.8rem',
-    cursor: 'pointer',
-    borderBottom: '2px solid smokewhite',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    '&:hover': {
-      backgroundColor: '#f9a825'
-    }
+    padding: "0.8rem",
+    cursor: "pointer",
+    borderBottom: "2px solid smokewhite",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    "&:hover": {
+      backgroundColor: "#f9a825",
+    },
   },
-  searchLabel:{
-    fontSize: '1.2rem',
-    color: 'gray',
-    fontWeight: 300
-  }
+  searchLabel: {
+    fontSize: "1.2rem",
+    color: "gray",
+    fontWeight: 300,
+  },
 }));
 
 export { useStyles };
